@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class playerHealth : MonoBehaviour {
 
@@ -12,11 +14,19 @@ public class playerHealth : MonoBehaviour {
     playerController controlMovement;
 
 
+    //HUD VARIABLES
+
+    public Slider healthSlider;
+
+
+
 	// Use this for initialization
 	void Start () {
         currentHealth = fullHealth;
         controlMovement = GetComponent<playerController>();
 
+        healthSlider.maxValue = fullHealth;
+        healthSlider.value = fullHealth;
 
 	}
 	
@@ -34,6 +44,7 @@ public class playerHealth : MonoBehaviour {
         }
 
         currentHealth -= damage;
+        healthSlider.value = currentHealth;
 
         if(currentHealth <= 0)
         {
