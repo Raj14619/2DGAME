@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 135900044}
   - component: {fileID: 135900043}
   - component: {fileID: 135900046}
+  - component: {fileID: 135900047}
   m_Layer: 9
   m_Name: spikeyRock
   m_TagString: Enemy
@@ -217,6 +218,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMaxHealth: 20
+--- !u!114 &135900047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 135900042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057cf633685b8774c8e5510b4910118a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  damageRate: 1
+  pushBackForce: 20
 --- !u!1001 &238894235
 Prefab:
   m_ObjectHideFlags: 0
@@ -490,6 +505,7 @@ GameObject:
   - component: {fileID: 817203711}
   - component: {fileID: 817203712}
   - component: {fileID: 817203713}
+  - component: {fileID: 817203714}
   m_Layer: 0
   m_Name: character
   m_TagString: Player
@@ -654,6 +670,19 @@ MonoBehaviour:
   jumpHeight: 250
   gunTip: {fileID: 327781932}
   bullet: {fileID: 1064155923262476, guid: d0c394344a970b544ab72466c7fae8d8, type: 2}
+--- !u!114 &817203714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817203706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d59ae7316ca6884bb4443703237e5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHealth: 20
+  deathFX: {fileID: 1446381055054068, guid: 0e2dea17770322147acf32f33804542b, type: 2}
 --- !u!1001 &863620017
 Prefab:
   m_ObjectHideFlags: 0
@@ -695,6 +724,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03fd591c79b43334a8089bfaef1cd813, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1095526309
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4110489236835800, guid: 0e2dea17770322147acf32f33804542b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110489236835800, guid: 0e2dea17770322147acf32f33804542b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110489236835800, guid: 0e2dea17770322147acf32f33804542b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110489236835800, guid: 0e2dea17770322147acf32f33804542b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110489236835800, guid: 0e2dea17770322147acf32f33804542b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110489236835800, guid: 0e2dea17770322147acf32f33804542b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110489236835800, guid: 0e2dea17770322147acf32f33804542b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110489236835800, guid: 0e2dea17770322147acf32f33804542b, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0e2dea17770322147acf32f33804542b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1227814935
 Prefab:

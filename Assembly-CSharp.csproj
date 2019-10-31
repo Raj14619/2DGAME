@@ -63,8 +63,10 @@
   <ItemGroup>
     <Compile Include="Assets\cameraFollow2DPlatformer.cs" />
     <Compile Include="Assets\DestroyMe.cs" />
+    <Compile Include="Assets\enemyDamage.cs" />
     <Compile Include="Assets\enemyHealth.cs" />
     <Compile Include="Assets\playerController.cs" />
+    <Compile Include="Assets\playerHealth.cs" />
     <Compile Include="Assets\projectileController.cs" />
     <Compile Include="Assets\RocketHit.cs" />
     <Reference Include="UnityEditor.StandardEvents">
