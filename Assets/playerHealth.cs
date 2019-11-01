@@ -17,8 +17,11 @@ public class playerHealth : MonoBehaviour {
     //HUD VARIABLES
 
     public Slider healthSlider;
+    public Image damageScreen;
 
-
+    bool damaged = false;
+    Color damagedColour = new Color(0f, 0f, 0f, 5f);
+    float smoothColour = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -28,12 +31,25 @@ public class playerHealth : MonoBehaviour {
         healthSlider.maxValue = fullHealth;
         healthSlider.value = fullHealth;
 
+        damaged = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-	}
+        if(damaged == true)
+        {
+            damageScreen.color = damagedColour;
+
+            
+        }
+        else
+        {
+            damageScreen.color = Color.Lerp(damageScreen.color, Color.clear, smoothColour * Time.deltaTime);
+        }
+        damaged = false;
+
+    }
 
 
     public void addDamage(float damage)
@@ -45,6 +61,7 @@ public class playerHealth : MonoBehaviour {
 
         currentHealth -= damage;
         healthSlider.value = currentHealth;
+        damaged = true;
 
         if(currentHealth <= 0)
         {
