@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class enemyHealth : MonoBehaviour {
 
@@ -8,10 +9,15 @@ public class enemyHealth : MonoBehaviour {
 
     float currentHealth;
 
+    public GameObject enemyDeathFX;
+
+    public Slider enemySlider;
+
 	// Use this for initialization
 	void Start () {
         currentHealth = enemyMaxHealth;
-
+        enemySlider.maxValue = currentHealth;
+        enemySlider.value = currentHealth;
 
 	}
 	
@@ -27,6 +33,10 @@ public class enemyHealth : MonoBehaviour {
     {
         currentHealth -= damage;
 
+        enemySlider.gameObject.SetActive(true);
+
+        enemySlider.value = currentHealth;
+
         if (currentHealth <= 0)
         {
             makeDead();
@@ -37,6 +47,7 @@ public class enemyHealth : MonoBehaviour {
     void makeDead()
     {
         Destroy(gameObject);
+        Instantiate(enemyDeathFX, transform.position, transform.rotation);
     }
 
 }
